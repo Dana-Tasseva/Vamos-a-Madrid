@@ -1,49 +1,144 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
     <title>Lugares Madrid</title>
     <style>
-        li {
-            margin-bottom: 20px; /* Espace entre les éléments de la liste */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: #fafafa;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p.intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        h2 {
+            border-bottom: 3px solid #e67e22;
+            padding-bottom: 6px;
+            color: #34495e;
+            margin-bottom: 30px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 15px 20px;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+            color: #e67e22;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-style: italic;
+            color: #777;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0 10px;
+                margin: 20px auto;
+            }
+
+            .card img {
+                height: 150px;
+            }
         }
     </style>
 </head>
 
 <body>
     <h1>Les lieux à ne pas manquer à Madrid !</h1>
-    <p>
-        Vous venez visiter Madrid et vous ne savez pas par où commencer ?
+    <p class="intro">
+        Vous venez visiter Madrid et vous ne savez pas par où commencer ?<br>
         Voici une liste des lieux à visiter en priorité à Madrid !
     </p>
 
     <h2>Les incontournables à visiter :</h2>
-    <ul>
-        <li>
-            Museo del Prado<br>
-            <img src="Museo_del_Prado.jpg" alt="Museo del Prado" width="300" height="200">
-        </li>
-        <li>
-            Le parc del Retiro<br>
-            <img src="Parc del retiro.jfif" alt="Parc del Retiro" width="300" height="200">
-        </li>
-        <li>
-            Le palais royal de Madrid<br>
-            <img src="Palais_royal.avif" alt="Palais royal" width="300" height="200">
-        </li>
-		<li>
-            La plaza Mayor<br>
-            <img src="Plaza Mayor.jpg" alt="Palais royal" width="300" height="200">
-        </li>
-		<li>
-            La cathédrale Santa María la Real de la Almudena<br>
-            <img src="Cathédrale.webp" alt="Palais royal" width="300" height="200">
-        </li>
-		
-    </ul>
-	
-	<p> Bon séjour :)</p>
+    <div class="grid-container">
+        <article class="card">
+            <img src="Museo_del_Prado.jpg" alt="Museo del Prado">
+            <div class="card-content">
+                <h3>Museo del Prado</h3>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="Parc del retiro.jfif" alt="Parc del Retiro">
+            <div class="card-content">
+                <h3>Le parc del Retiro</h3>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="Palais_royal.avif" alt="Palais royal">
+            <div class="card-content">
+                <h3>Le palais royal de Madrid</h3>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="Plaza Mayor.jpg" alt="Plaza Mayor">
+            <div class="card-content">
+                <h3>La plaza Mayor</h3>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="Cathédrale.webp" alt="Cathédrale Santa María la Real de la Almudena">
+            <div class="card-content">
+                <h3>La cathédrale Santa María la Real de la Almudena</h3>
+            </div>
+        </article>
+    </div>
+
+    <footer>Bon séjour :)</footer>
 </body>
 
 </html>
